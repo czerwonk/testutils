@@ -3,5 +3,5 @@ Simple collection of assertion functions to prevent boilerplate code
 
 # Install
 ```
-go get -u czerwonk/testutils
+go get -u github.com/czerwonk/testutils
 ```
