@@ -59,13 +59,13 @@ func Complex128Equal(name string, expected, current complex128, t *testing.T) {
 }
 
 func True(name string, current bool, t *testing.T) {
-	if current {
+	if !current {
 		t.Fatalf(equalError, name, true, false)
 	}
 }
 
 func False(name string, current bool, t *testing.T) {
-	if !current {
+	if current {
 		t.Fatalf(equalError, name, false, true)
 	}
 }
