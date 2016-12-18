@@ -4,6 +4,8 @@ import "testing"
 
 const equalError string = "%s: expected %v but got %v"
 
+type Assertion func() bool
+
 func StringEqual(name string, expected, current string, t *testing.T) {
 	if current != expected {
 		t.Fatalf(equalError, name, expected, current)
@@ -70,7 +72,7 @@ func False(name string, current bool, t *testing.T) {
 	}
 }
 
-func That(name, text string, assertion func() bool, t *testing.T) {
+func That(name, text string, assertion Assertion, t *testing.T) {
 	if !assertion() {
 		t.Fatalf("%s: %s", name, text)
 	}
